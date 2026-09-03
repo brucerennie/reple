@@ -1,34 +1,47 @@
 #!/usr/bin/env python3
 
-from __future__ import unicode_literals
+package Replay
 
-import sys
-import os
+# from __future__ import unicode_literals
 
-from functools import reduce
-from operator import add
-from collections import defaultdict
+# import sys
+# import os
 
-from functools import partial
+# from functools import reduce
+# from operator import add
+# from collections import defaultdict
 
-import importlib
+# from functools import partial
 
-import argparse
+# import importlib
+
+# import argparse
+import ClassObject
 import json
 
-from prompt_toolkit import prompt
-from prompt_toolkit.history import InMemoryHistory
+link
+  ximage,
+  xoptions
 
-from prompt_toolkit.lexers import PygmentsLexer
-from prompt_toolkit.styles import style_from_pygments_cls
+# from prompt_toolkit import prompt
+# from prompt_toolkit.history import InMemoryHistory
 
-from pygments.styles import get_style_by_name
-from pygments.formatters import Terminal256Formatter
+# from prompt_toolkit.lexers import PygmentsLexer
+# from prompt_toolkit.styles import style_from_pygments_cls
 
-class CompilationEnvironment:
-    def __init__(self, compile, compile_args, user_cargs):
-        self._compile = compile
-        self.compile_args = defaultdict(str, compile_args)
+# from pygments.styles import get_style_by_name
+# from pygments.formatters import Terminal256Formatter
+
+class CompilationEnvironment : ClassObject::ClassClass(
+  compile,
+  compile_args,
+  user_args
+)
+
+  method init(compile, compile_args, user_args)
+  # def __init__(self, compile, compile_args, user_cargs):
+   self.compile := compile
+   self.compile_args := ::tabledefaultdict(str, compile_args)
         self.user_cargs = user_cargs
 
         assert(isinstance(self._compile, str))
@@ -49,7 +62,7 @@ class CompilationEnvironment:
             return self._compile.format(code_fname=code_fname,
                     bin_fname=bin_fname, **self.compile_args)
 
-    # Given a code string and file name,
+    # Given a code ing and file name,
     # attempt to compile
     def compile(self, code_string, name, output_dir):
         code_fname = output_dir + name + self.code_suffix
