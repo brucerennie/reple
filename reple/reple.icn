@@ -41,8 +41,9 @@ class CompilationEnvironment : ClassObject::ClassClass(
   method init(compile, compile_args, user_args)
   # def __init__(self, compile, compile_args, user_cargs):
    self.compile := compile
-   self.compile_args := ::tabledefaultdict(str, compile_args)
-        self.user_cargs = user_cargs
+   self.compile_args := ::table(str, compile_args)
+   self.compile_args[str] := compile_args
+   self.user_cargs = user_cargs
 
         assert(isinstance(self._compile, str))
         assert(isinstance(self.compile_args, dict))
